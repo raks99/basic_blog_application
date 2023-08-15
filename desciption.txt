@@ -1,0 +1,33 @@
+Task: Create a basic blog application where users can read, create, update, and delete blog posts.
+1. Project Setup:
+Initialize a new Django project named MyBlog.
+Create a new Django app named blog.
+2. Database Models:
+Create a Post model in the blog app with the following fields:
+title: A character field for the post title.
+content: A text field for the post content.
+created_at: A datetime field that automatically sets the date and time when a post is created.
+updated_at: A datetime field that automatically updates the date and time when a post is edited.
+3. Admin Interface:
+Register the Post model with the Django admin site.
+Customize the admin interface to display the title, created_at, and updated_at fields in the post listing.
+4. URL Configuration:
+Set up URLs for the following views:
+List all posts
+View a single post's details
+Create a new post
+Edit an existing post
+Delete a post
+5. Views and Templates:
+Create views for each of the above URLs:
+List View: Display all the posts with their titles. Each title should be a clickable link that takes the user to the detail view of that post.
+Detail View: Display the title, content, and creation date of a single post.
+Create View: Display a form where users can enter the title and content of a new post. Once submitted, the post should be saved to the database and the user should be redirected to the list view.
+Edit View: Display a form pre-filled with the post's current title and content. Users can edit and submit the form. Once submitted, the post should be updated in the database and the user should be redirected to the detail view of that post.
+Delete View: Ask the user for confirmation before deleting a post. Once confirmed, the post should be removed from the database and the user should be redirected to the list view.
+6. Static Files and Styling:
+Add a base template that includes a common header and footer for all pages.
+Use static files to add basic CSS styling to the blog. For instance, style the header, post titles, and buttons.
+7. Bonus (Optional):
+Implement pagination in the list view to display a limited number of posts per page.
+Add a search functionality to search for posts by title.
