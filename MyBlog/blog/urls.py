@@ -18,4 +18,7 @@ urlpatterns = [
 
     # Delete a post
     path('<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
+    
+    # Search a post
+    path('search/', views.PostSearchView.as_view(), name='post_search'),
 ]

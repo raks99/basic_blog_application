@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator
 from .models import Post
 from django.urls import reverse_lazy
 
@@ -9,6 +10,7 @@ class PostListView(ListView):  # it inherits from ListView class
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
+    paginate_by = 10  # Implement pagination in the list view to display a limited number of posts per page.
 
 class PostDetailView(DetailView):
     model = Post
@@ -56,4 +58,16 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = 'blog/post_confirm_delete.html'  #
     success_url = reverse_lazy('blog:post_list')  # redirect him back to the list of all blog posts
+
+# Adding search functionality
+class PostSearchView(ListView):
+    model = Post
+    template_name = 'blog/post_search_results.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')  # Get the search query from the URL parameter
+        if query:
+            return Post.objects.filter(title__icontains=query)
+        return Post.objects.none()  # Return an empty queryset if no search query is provided
 

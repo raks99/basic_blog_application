@@ -9,7 +9,7 @@ background-repeat: no-repeat; /* Prevents the image from repeating */
 background-position: left; /* Centers the image horizontally and vertically */
 background-size: 50%;
 /* Set a fallback background color in case the image doesn't load or cover the entire area */
-background-color: #f8f8f8;
+background-color: #d1c8c8;
 }
 /* Styling for headers */
 h1 {
@@ -32,8 +32,8 @@ button {
     cursor: pointer;
 }
 button:hover {  /* pseudo-class is used to apply styles to an element, if i move mouse over the button it changes style*/
-    background-color: #040404;
-    color: #ef0a0a;
+    background-color: #ff0000;
+    color: #000000;
 }
 
 /* Style for the Cancel button */
@@ -50,14 +50,14 @@ button:hover {  /* pseudo-class is used to apply styles to an element, if i move
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 0px;
-    background-color: #d9534f;
+    background-color: #000000;
     color: #ffffff;
     text-decoration: none;
 }
 
 .cancel-button:hover {  /* pseudo-class is used to apply styles to an element, if i move mouse over the button it changes style*/
-    background-color: #040404;
-    color: #ef0a0a;
+    background-color: #09ff00;
+    color: #000000;
 }
 
 /*Styling for footer */
