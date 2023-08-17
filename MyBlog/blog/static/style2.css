@@ -60,6 +60,30 @@ button:hover {  /* pseudo-class is used to apply styles to an element, if i move
     color: #000000;
 }
 
+/*Style for Search button*/
+.search-button {
+    display: inline-block;
+    padding: 2px 24px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.search-button:hover {  /* pseudo-class is used to apply styles to an element, if i move mouse over the button it changes style*/
+    background-color: #1100ff;
+    color: #ffffff;
+}
+
 /*Styling for footer */
 footer {
     /*background-color: #ffffff;*/
