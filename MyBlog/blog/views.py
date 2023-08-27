@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.core.paginator import Paginator
 from .models import Post
 from django.urls import reverse_lazy
-
+from rest_framework import generics
+from .serializers import PostSerializer
 
 # Create your views here.
 class PostListView(ListView):  # it inherits from ListView class
+    # ListView places the objects from the database in a context variable named object_list
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
@@ -71,3 +73,9 @@ class PostSearchView(ListView):
             return Post.objects.filter(title__icontains=query)
         return Post.objects.none()  # Return an empty queryset if no search query is provided
 
+# REST API view
+class PostAPIView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    

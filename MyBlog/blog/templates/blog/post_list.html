@@ -1,7 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-{% for post in object_list %}
-    <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a><br>
-{% endfor %}
+<h3>Here are the list of all blog posts: </h3>
+<ul>
+    {% for post in object_list %}
+        <li><a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'blog:post_create' %}" class="search-button">Create New Post</a><!--here we point to the PostCreateView using the URL name 'blog:post_create'-->
+
 {% endblock %}

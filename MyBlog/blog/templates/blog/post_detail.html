@@ -4,4 +4,9 @@
 <h2>{{ object.title }}</h2>
 <p>{{ object.content }}</p>
 <p>Created on: {{ object.created_at }}</p>
+<!--Adding button for quick edit that post-->
+<a href="{% url 'blog:post_edit' object.pk %}" class="search-button">Edit that post</a>
+<!--Adding button for quick delete that post-->
+<a href="{% url 'blog:post_delete' object.pk %}" class="del1-button">Delete that post</a>
+
 {% endblock %}

@@ -21,4 +21,7 @@ urlpatterns = [
     
     # Search a post
     path('search/', views.PostSearchView.as_view(), name='post_search'),
+
+    # url for REST API view
+    path('api/', views.PostAPIView.as_view(), name='post-list'),
 ]

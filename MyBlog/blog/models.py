@@ -9,5 +9,6 @@ class Post(models.Model):
     created_at = models.DateTimeField(default=timezone.now, editable=False)  # Editable is false, bcs this cannot be editable
     updated_at = models.DateTimeField(auto_now=True)  # automatically updates the date and time when a post is edited.
 
-    def __str__(self):  # method is used to represent the Post objects as strings, typically in the admin interface.
+    def __str__(self):  # method is used to represent the Post objects as strings, typically in the admin interface. if anyone prints that out
         return self.title
+    
