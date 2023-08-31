@@ -12,7 +12,7 @@ class PostListView(ListView):  # it inherits from ListView class
     model = Post
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
-    paginate_by = 10  # Implement pagination in the list view to display a limited number of posts per page.
+    paginate_by = 12  # Implement pagination in the list view to display a limited number of posts per page.
 
 class PostDetailView(DetailView):
     model = Post
